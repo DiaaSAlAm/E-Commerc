@@ -479,8 +479,38 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-L5-wbl">
                                         <rect key="frame" x="8" y="90" width="398" height="228"/>
                                         <subviews>
-                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dl-C7-xIN">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgE-yT-Irw">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="45"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: Highest to low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-R6-wwC">
+                                                        <rect key="frame" x="8" y="8" width="382" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wne-JY-vWX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="45"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="didTappedListButtons:" destination="kL7-Ai-aHp" eventType="touchUpInside" id="o0C-h9-Ebx"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="OrC-os-noZ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GiA-R6-wwC" secondAttribute="bottom" constant="8" id="Pzh-36-2Vc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GiA-R6-wwC" secondAttribute="trailing" constant="8" id="UFJ-E2-xSj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wne-JY-vWX" secondAttribute="trailing" id="Vc8-sp-JUK"/>
+                                                    <constraint firstItem="GiA-R6-wwC" firstAttribute="leading" secondItem="cgE-yT-Irw" secondAttribute="leading" constant="8" id="XZD-B5-WEj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Wne-JY-vWX" secondAttribute="bottom" id="e2h-yK-9o8"/>
+                                                    <constraint firstItem="Wne-JY-vWX" firstAttribute="leading" secondItem="cgE-yT-Irw" secondAttribute="leading" id="gWd-Zc-Gfd"/>
+                                                    <constraint firstItem="Wne-JY-vWX" firstAttribute="top" secondItem="cgE-yT-Irw" secondAttribute="top" id="jDi-s6-X6g"/>
+                                                    <constraint firstItem="GiA-R6-wwC" firstAttribute="top" secondItem="cgE-yT-Irw" secondAttribute="top" constant="8" id="rIB-8W-JPl"/>
+                                                </constraints>
+                                            </view>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Dl-C7-xIN">
+                                                <rect key="frame" x="0.0" y="61" width="398" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydI-Ri-hQt">
                                                         <rect key="frame" x="8" y="8" width="382" height="29"/>
@@ -510,7 +540,7 @@
                                                 </constraints>
                                             </view>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWr-aG-rke">
-                                                <rect key="frame" x="0.0" y="61" width="398" height="45"/>
+                                                <rect key="frame" x="0.0" y="122" width="398" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Newest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbL-FP-sI9">
                                                         <rect key="frame" x="8" y="8" width="382" height="29"/>
@@ -540,7 +570,7 @@
                                                 </constraints>
                                             </view>
                                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7j-RW-tMM">
-                                                <rect key="frame" x="0.0" y="122" width="398" height="45"/>
+                                                <rect key="frame" x="0.0" y="183" width="398" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-xI-ZIl">
                                                         <rect key="frame" x="8" y="8" width="382" height="29"/>
@@ -567,36 +597,6 @@
                                                     <constraint firstItem="C1K-xI-ZIl" firstAttribute="top" secondItem="f7j-RW-tMM" secondAttribute="top" constant="8" id="Z9s-rJ-5AZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="5N0-Sa-ZNI" secondAttribute="trailing" id="biG-3g-U5d"/>
                                                     <constraint firstAttribute="height" constant="45" id="kzp-mT-FyR"/>
-                                                </constraints>
-                                            </view>
-                                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgE-yT-Irw">
-                                                <rect key="frame" x="0.0" y="183" width="398" height="45"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price: Highest to low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-R6-wwC">
-                                                        <rect key="frame" x="8" y="8" width="382" height="29"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wne-JY-vWX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="398" height="45"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <connections>
-                                                            <action selector="didTappedListButtons:" destination="kL7-Ai-aHp" eventType="touchUpInside" id="o0C-h9-Ebx"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="OrC-os-noZ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="GiA-R6-wwC" secondAttribute="bottom" constant="8" id="Pzh-36-2Vc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="GiA-R6-wwC" secondAttribute="trailing" constant="8" id="UFJ-E2-xSj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Wne-JY-vWX" secondAttribute="trailing" id="Vc8-sp-JUK"/>
-                                                    <constraint firstItem="GiA-R6-wwC" firstAttribute="leading" secondItem="cgE-yT-Irw" secondAttribute="leading" constant="8" id="XZD-B5-WEj"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Wne-JY-vWX" secondAttribute="bottom" id="e2h-yK-9o8"/>
-                                                    <constraint firstItem="Wne-JY-vWX" firstAttribute="leading" secondItem="cgE-yT-Irw" secondAttribute="leading" id="gWd-Zc-Gfd"/>
-                                                    <constraint firstItem="Wne-JY-vWX" firstAttribute="top" secondItem="cgE-yT-Irw" secondAttribute="top" id="jDi-s6-X6g"/>
-                                                    <constraint firstItem="GiA-R6-wwC" firstAttribute="top" secondItem="cgE-yT-Irw" secondAttribute="top" constant="8" id="rIB-8W-JPl"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -780,6 +780,9 @@
                                                         <rect key="frame" x="281.5" y="0.0" width="116.5" height="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="unfavorite"/>
+                                                        <connections>
+                                                            <action selector="didTappedFavoriteButton:" destination="vxv-6g-3ZE" eventType="touchUpInside" id="hdD-XP-6EG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -996,6 +999,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BfQ-YD-V3C"/>
                     <connections>
+                        <outlet property="favoriteButton" destination="IVI-qa-mQA" id="TDs-Ta-PSg"/>
                         <outlet property="productImagesCollectionView" destination="SYg-m2-1zj" id="Ao4-FM-hcH"/>
                         <outlet property="recommendPrdouctCollectionView" destination="lsd-2u-F6r" id="fS8-pn-uBU"/>
                     </connections>

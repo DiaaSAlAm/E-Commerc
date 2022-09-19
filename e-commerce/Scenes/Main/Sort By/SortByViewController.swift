@@ -7,11 +7,19 @@
 
 import UIKit
 
+protocol SortProtocol {
+    func didChangedSort(title: String)
+}
+
 class SortByViewController: UIViewController {
     
     @IBOutlet var listViews: [UIView]!
     
     @IBOutlet var listLabels: [UILabel]!
+    
+    var delegate: SortProtocol?
+    
+    var sortArray: [String] = ["Price: Highest to low","Popular", "Newest", "Customer review"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +42,9 @@ class SortByViewController: UIViewController {
     
     
     @IBAction func didTappedListButtons(_ sender: UIButton) {
+        let title = sortArray[sender.tag]
+        delegate?.didChangedSort(title: title)
+        
         print("Sender tag is:", sender.tag)
         listViews.forEach({$0.backgroundColor = .white})
         listViews.first(where: {$0.tag == sender.tag })?.backgroundColor = .red

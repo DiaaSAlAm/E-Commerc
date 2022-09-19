@@ -11,11 +11,21 @@ class ProductDetailsViewController: UIViewController {
 
     @IBOutlet weak var productImagesCollectionView: UICollectionView!
     @IBOutlet weak var recommendPrdouctCollectionView: UICollectionView!
+    @IBOutlet weak var favoriteButton: UIButton!
     
+    
+    var product: ProductModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = product?.title
+        changeFavoriteButtonImage()
         registerCollectionView()
+    }
+    
+    func changeFavoriteButtonImage(){
+        let image = (product?.isFavorite ?? false) ? UIImage(named: "favorite2") : UIImage(named: "favoriteUnFill")
+        favoriteButton.setImage(image, for: .normal)
     }
     
     func registerCollectionView(){
@@ -28,6 +38,16 @@ class ProductDetailsViewController: UIViewController {
         recommendPrdouctCollectionView.delegate = self
         recommendPrdouctCollectionView.dataSource = self
     
+    }
+    
+    @IBAction func didTappedFavoriteButton(_ sender: UIButton){
+       let isFavorite =  product?.isFavorite ?? false
+        product?.isFavorite = !isFavorite
+        changeFavoriteButtonImage()
+        guard let productId = product?.id else { return }
+        guard let productIsFavorite = product?.isFavorite else {return}
+        let userInfo: [String: Any] = ["id": productId, "isFavorite": productIsFavorite]
+        NotificationCenter.default.post(name: Notification.Name("didTappedFavoriteButton"), object: nil,userInfo: userInfo)
     }
 }
 
