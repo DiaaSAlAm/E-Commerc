@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MOLH
 
 class LoginViewController: UIViewController {
 
@@ -14,12 +15,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var newLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailView.addLayer()
         passwordView.addLayer()
         loginButton.addLayer()
+//        newLabel.text = "LOGIN".localized
+        title = "LOGIN".localized
     }
     
     
@@ -52,6 +56,12 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    
+    
+    @IBAction func didTappedChangeLanguage(_ sender: UIButton){
+        MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+        MOLH.reset()
+    }
     
 }
 

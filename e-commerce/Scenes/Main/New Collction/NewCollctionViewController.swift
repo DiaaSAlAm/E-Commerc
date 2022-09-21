@@ -71,14 +71,8 @@ class NewCollctionViewController: UIViewController, SortProtocol, FavoriteButton
                 
                 productModelArray.first(where: {$0.id == id})?.isFavorite = isFavorite
                 productsCollectionView.reloadData()
-            }
-            
+            } 
         }
-        
-         
-        
-        
-        
         
     }
     

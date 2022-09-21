@@ -20,7 +20,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="e_commerce" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="088-1m-rQ5">
-                                <rect key="frame" x="246.5" y="551" width="147" height="33"/>
+                                <rect key="frame" x="248.5" y="551" width="145" height="34"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Forgot password?">
@@ -82,19 +82,22 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHN-24-Ulb">
-                                <rect key="frame" x="41.5" y="616" width="331" height="45"/>
+                                <rect key="frame" x="41.5" y="617" width="331" height="45"/>
                                 <color key="backgroundColor" red="0.85882352941176465" green="0.18823529411764706" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="LOGIN"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didPressLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e3E-U8-Hm8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlb-PS-tpV">
-                                <rect key="frame" x="70" y="685" width="274" height="33"/>
+                                <rect key="frame" x="72.5" y="686" width="269" height="34"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Do not have an account ? Sing up">
@@ -104,10 +107,35 @@
                                     <action selector="didTappedSingup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZkM-yL-sgh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDZ-Fe-3x5">
+                                <rect key="frame" x="167" y="120" width="80" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="LOGIN"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAv-t1-kty">
+                                <rect key="frame" x="41.5" y="752" width="331" height="50"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="51l-sS-o1w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Change Language">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTappedChangeLanguage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JkU-P6-hvr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MAv-t1-kty" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1IR-SF-RO4"/>
                             <constraint firstItem="PQZ-qW-aae" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4kU-3I-ljJ"/>
                             <constraint firstItem="088-1m-rQ5" firstAttribute="trailing" secondItem="PQZ-qW-aae" secondAttribute="trailing" id="AdT-DL-jk5"/>
                             <constraint firstItem="088-1m-rQ5" firstAttribute="top" secondItem="PQZ-qW-aae" secondAttribute="bottom" constant="8" id="Cdk-Ih-rzl"/>
@@ -116,16 +144,21 @@
                             <constraint firstItem="YHN-24-Ulb" firstAttribute="top" secondItem="088-1m-rQ5" secondAttribute="bottom" constant="32" id="N4n-CX-dU3"/>
                             <constraint firstItem="qlb-PS-tpV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QZv-m1-Eaw"/>
                             <constraint firstItem="YHN-24-Ulb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.05" id="UjD-Ap-3mz"/>
+                            <constraint firstItem="zDZ-Fe-3x5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="dMP-EG-nnx"/>
+                            <constraint firstItem="zDZ-Fe-3x5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="f2B-md-RTD"/>
+                            <constraint firstItem="MAv-t1-kty" firstAttribute="top" secondItem="qlb-PS-tpV" secondAttribute="bottom" constant="32" id="gTJ-WA-10c"/>
                             <constraint firstItem="qlb-PS-tpV" firstAttribute="top" secondItem="YHN-24-Ulb" secondAttribute="bottom" constant="24" id="kSo-CJ-k3I"/>
                             <constraint firstItem="YHN-24-Ulb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mEX-gV-qMv"/>
                             <constraint firstItem="PQZ-qW-aae" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="nQe-Ds-8xf"/>
                             <constraint firstItem="PQZ-qW-aae" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.151786" id="riv-sg-BP6"/>
+                            <constraint firstItem="MAv-t1-kty" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="s1v-cL-38E"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="y8h-mM-xKq"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="y8h-mM-xKq"/>
                     <connections>
                         <outlet property="emailView" destination="4in-el-ebb" id="ciM-KF-bBw"/>
                         <outlet property="loginButton" destination="YHN-24-Ulb" id="nsN-wL-DxO"/>
+                        <outlet property="newLabel" destination="zDZ-Fe-3x5" id="udt-V9-agv"/>
                         <outlet property="passwordTextField" destination="1hP-y8-17S" id="vJr-Bx-kO7"/>
                         <outlet property="passwordView" destination="WcD-U3-kx2" id="qkS-n7-yBp"/>
                     </connections>
@@ -208,7 +241,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CP8-Bt-rpk">
-                                <rect key="frame" x="207.5" y="585" width="186" height="31"/>
+                                <rect key="frame" x="209.5" y="585" width="184" height="31"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">

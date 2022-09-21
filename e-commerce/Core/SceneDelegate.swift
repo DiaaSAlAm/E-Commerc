@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import MOLH
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, MOLHResetable {
+   
+    
 
     var window: UIWindow?
 
@@ -16,9 +19,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        configureMOLH()
         rootViewController()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
+    
+    func configureMOLH(){
+        MOLHLanguage.setDefaultLanguage("en")
+        MOLH.shared.activate(true)
+        
+    }
+    
+    func reset() {
+        if let delegate = UIApplication.shared.connectedScenes.first?.delegate {
+            
+            UIView.transition(with: ((delegate as? SceneDelegate)?.window)!, duration: 0.5, options: .transitionFlipFromLeft, animations: {}) { _ in
+                self.rootViewController()
+            }
+        }
+    }
+    
+    func goToTabBar(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+        window?.rootViewController = viewController
+    }
+    
     
     func rootViewController(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
