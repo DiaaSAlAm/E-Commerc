@@ -43,11 +43,16 @@ class LoginViewController: UIViewController {
     }
     
     func goToTabBar(){
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+//        let nvg = UINavigationController(rootViewController: tabbar)
+//        nvg.modalPresentationStyle = .fullScreen
+//         present(nvg, animated: true)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabbar = storyboard.instantiateViewController(withIdentifier: "TabBarController")
         let nvg = UINavigationController(rootViewController: tabbar)
-        nvg.modalPresentationStyle = .fullScreen
-         present(nvg, animated: true)
+        present(nvg, animated: true)
     }
     
     @IBAction func didTappedSingup(_ sender: UIButton) {
@@ -66,4 +71,9 @@ class LoginViewController: UIViewController {
 }
 
 
-
+extension UIView {
+    func addLayers(){
+        self.layer.cornerRadius = 10
+    }
+    
+}
